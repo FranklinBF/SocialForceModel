@@ -8,7 +8,7 @@ The code can be compiled (with linux g++ compiler) and run using the following c
 `g++ -std=c++11 -I vecmath/ -c Wall.cpp`  
 `g++ -std=c++11 -I vecmath/ -c Core.cpp`  
 `g++ -std=c++11 Agent.o Wall.o SocialForce.o Core.o -o executable.exe -lGL -lGLU -lglut`  
-`./executable`  
+`./executable.exe`  
 Press key <kbd>a</kbd> to start the simulation
 
 # Social Force Model in C++
