@@ -1,3 +1,16 @@
+This repository is a fork from [fawwazbmn/SocialForceModel](https://github.com/fawwazbmn/SocialForceModel). I just made some changes to make it compilable with g++ std=c++11. 
+Given that I had some issues getting to work the C++ Port of the *vecmath* package, I modified the vecmath code to make it compatible with c++11 standard and I added it as part of the source code.
+
+With the linux g++ compiler it can be compiled and run with the following commands:
+
+`g++ -std=c++11 -I vecmath/ -c SocialForce.cpp`
+`g++ -std=c++11 -I vecmath/ -c Agent.cpp`
+`g++ -std=c++11 -I vecmath/ -c Wall.cpp`
+`g++ -std=c++11 -I vecmath/ -c Core.cpp`
+`g++ -std=c++11 Agent.o Wall.o SocialForce.o Core.o -o executable.exe -lGL -lGLU -lglut`
+`./executable`
+Pressing the key <kbd>a</kbd> to start the simulation
+
 # Social Force Model in C++
 
 The *social force model* was originally introduced by [Helbing and Molnár (1995)](https://doi.org/10.1103/PhysRevE.51.4282), and is one of the microscopic technique in crowd simulation. It presents an idea that the agents’ internal motivation to perform certain movements affects their motion. Throughout the years, many improvements were made to the original model. One of the latest improvement was made by [Moussaïd *et al.* (2009)](https://doi.org/10.1098/rspb.2009.0405). In their research, the model parameters were calibrated to match the results of the experiment they have conducted on the real-world crowd. The *Social Force Model in C++* project  is created based on this research.

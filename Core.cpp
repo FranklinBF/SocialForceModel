@@ -2,7 +2,7 @@
 #include <vector>
 #include <cmath>
 #include <cstring>
-#include <gl/glut.h>
+#include <GL/glut.h>
 #include "SocialForce.h"
 using namespace std;
 
@@ -142,8 +142,7 @@ void display() {
 		drawWalls();
 	glPopMatrix();
 
-	showInformation();
-	
+
 	glutSwapBuffers();
 }
 
@@ -211,30 +210,6 @@ void drawWalls() {
 			glEnd();
 		}
 	glPopMatrix();
-}
-
-void showInformation() {
-	Point3f margin;
-	char totalAgentsStr[5] = "\0", fpsStr[8] = "\0", frctnStr[6] = "\0";
-
-	margin.x = static_cast<float>(-winWidth) / 50;
-	margin.y = static_cast<float>(winHeight) / 50 - 0.75F;
-
-	glColor3f(0.0, 0.0, 0.0);
-
-	// Total Agents
-	drawText(margin.x, margin.y, "Total agents:");
-	_itoa_s(socialForce->getCrowdSize(), totalAgentsStr, 10);
-	drawText(margin.x + 4.0F, margin.y, totalAgentsStr);
-
-	// FPS
-	drawText(margin.x, margin.y - 0.9F, "FPS:");
-	_itoa_s(static_cast<int>(fps), fpsStr, 10);								// Convert integer portion into char
-	strcat_s(fpsStr, ".");													// Append decimal mark
-	_itoa_s((fps - static_cast<int>(fps)) * 100000, frctnStr, 10);			// Convert fractional portion into char
-	strncat_s(fpsStr, frctnStr, sizeof(fpsStr) - (strlen(fpsStr) + 1));		// Append fractional portion
-	fpsStr[7] = '\0';
-	drawText(margin.x + 1.7F, margin.y - 0.9F, fpsStr);
 }
 
 void drawText(float x, float y, char text[]) {
