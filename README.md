@@ -1,15 +1,15 @@
-This repository is a fork from [fawwazbmn/SocialForceModel](https://github.com/fawwazbmn/SocialForceModel). I just made some changes to make it compilable with g++ std=c++11. 
-Given that I had some issues getting to work the C++ Port of the *vecmath* package, I modified the vecmath code to make it compatible with c++11 standard and I added it as part of the source code.
+This is a fork from [fawwazbmn/SocialForceModel](https://github.com/fawwazbmn/SocialForceModel). I just made some changes to make it compilable with `g++ std=c++11`. 
+Given that I had some issues getting to work the [C++ Port of the *vecmath* Package](http://objectclub.jp/download/vecmath_e), I modified the vecmath code to make it compatible with c++11 standard and I added it as part of the source code.
 
-With the linux g++ compiler it can be compiled and run with the following commands:
+The code can be compiled (with linux g++ compiler) and run using the following commands:  
 
-`g++ -std=c++11 -I vecmath/ -c SocialForce.cpp`
-`g++ -std=c++11 -I vecmath/ -c Agent.cpp`
-`g++ -std=c++11 -I vecmath/ -c Wall.cpp`
-`g++ -std=c++11 -I vecmath/ -c Core.cpp`
-`g++ -std=c++11 Agent.o Wall.o SocialForce.o Core.o -o executable.exe -lGL -lGLU -lglut`
-`./executable`
-Pressing the key <kbd>a</kbd> to start the simulation
+`g++ -std=c++11 -I vecmath/ -c SocialForce.cpp`  
+`g++ -std=c++11 -I vecmath/ -c Agent.cpp`  
+`g++ -std=c++11 -I vecmath/ -c Wall.cpp`  
+`g++ -std=c++11 -I vecmath/ -c Core.cpp`  
+`g++ -std=c++11 Agent.o Wall.o SocialForce.o Core.o -o executable.exe -lGL -lGLU -lglut`  
+`./executable`  
+Press key <kbd>a</kbd> to start the simulation
 
 # Social Force Model in C++
 
